@@ -1,0 +1,490 @@
+* {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+}
+body {
+    background-color: #ececed;
+}
+
+/* ======================Header==================== */
+/* ================================================ */
+header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header .nav {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76%;
+    height: 63px;
+    gap: 2rem;
+}
+
+header .nav img {
+    width: 105px;
+    height: 30px;
+}
+
+header .nav .nav-items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .nav .nav-items li {
+    display: inline-block;
+    list-style-type: none;
+    color: white;
+    align-items: center;
+    font-size: small;
+    background-color: red;
+}
+
+/* Style for the active list item */
+header .nav .nav-items li.active {
+    position: relative; /* Allows positioning of the white line */
+}
+
+header .nav .nav-items li.active::before {
+    content: ""; /* Creates the white line */
+    position: absolute;
+    top: -23px; /* Position the line above the list item */
+    left: 0;
+    width: 90%; /* Full width of the list item */
+    height: 5px; /* Thickness of the line */
+    background-color: white; /* White color for the line */
+    border-radius: 45px;
+}
+
+header .nav .nav-items li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ============Login============================= */
+/* ============================================== */
+header .login {
+    display: flex;
+    align-items: center;
+    width: 24%;
+    background-color: rgb(40, 40, 89);
+    gap: 2rem;
+    padding-left: 40px;
+}
+
+header .login .search {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header .login .login-wrapper {
+    position: relative;
+}
+
+header .login .login-btn {
+    display: flex;
+    color: black;
+    background-color: white;
+    border-radius: 9999px;
+    border: 2px solid black;
+    width: auto;
+    height: 50px;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header .login .login-btn .bi {
+    font-size: 23px;
+}
+
+header .login .login-btn p {
+    padding-top: 15px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+header .login .login-content {
+    transition: all 0.3s ease;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+header .login .login-content .btn {
+    width: 100%;
+    background-color: orangered;
+    color: white;
+    border-radius: 30px;
+}
+
+header .login .login-wrapper:hover .login-content {
+    display: block;
+}
+
+/* ============== Nav bar =================== */
+/* ========================================== */
+.secondary-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+.secondary-nav-items {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    /* font-weight: 600; */
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.secondary-nav-items > li {
+    position: relative;
+}
+
+.secondary-nav-items li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
+    /* padding: 8px 12px; */
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    display: inline-block;
+    opacity: .7;
+}
+
+.secondary-nav-items li a:hover,
+.secondary-nav-items li a:focus {
+    color: #222;
+    font-weight: bold;
+    /* outline: none; */
+}
+
+/* ========= DROPDOWN MULTI-COLUMN STYLE ========= */
+.nav-item-dropdown .dropdown {
+    position: fixed; /* Fixed position to make it independent of the parent */
+    top: 27.6%; /* Center vertically relative to the viewport */
+    left: 48%; /* Center horizontally relative to the viewport */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 80%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Transparent by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.nav-item-dropdown:hover .dropdown,
+.nav-item-dropdown:focus-within .dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown-section {
+    flex: 1 1 25%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    min-width: 200px;
+}
+
+.dropdown-section h6 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #004aad;
+    margin-bottom: 8px;
+}
+
+.dropdown-section ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.dropdown-section ul li {
+    margin-bottom: 8px;
+}
+
+.dropdown-section ul li a {
+    display: block;
+    padding: 6px 8px;
+    color: #555;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.dropdown-section ul li a:hover {
+    background-color: #f5f5f5;
+    color: #222;
+    font-weight: 600;
+}
+
+.dropdown-section:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.secondary-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    border: 2px solid #d8e2ee;
+    width: 130px;
+    height: 40px;
+    border-radius: 9999px;
+    background-color: #d8e2ee;
+}
+
+.nav-btn i {
+    font-size: 18px;
+    color: #0a68cc;
+}
+
+.nav-btn p {
+    margin: 0;
+    font-weight: 500;
+    color: #0a68cc;
+}
+
+/* ============== Banner ======================================= */
+/* ============================================================= */
+.banner-scroll {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-img {
+    display: flex;
+    width: 200%;
+    animation: scrollSmooth 5s infinite linear;
+}
+
+.banner-img img {
+    width: 100vw;
+    height: auto;
+    flex-shrink: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+@keyframes scrollSmooth {
+    0% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(0);
+    }
+    55% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+/* ============== Card ============================ */
+/* ================================================ */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.btn-primary {
+    border-radius: 30px;
+    padding: 6px 20px;
+}
+
+.container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* border:  2px solid black; */
+    justify-content: center;
+    align-items: center;
+}
+
+.apply-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    color: orangered;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.apply-link:hover {
+    color: #000;
+}
+
+.apply-link i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    color: orangered;
+    border: 1px solid orangered;
+    font-size: 10px;
+    transition: orangered 0.3s ease;
+}
+
+.apply-link:hover i {
+    color: #000;
+    border: 1px solid #000;
+}
+
+
+/* ============== box ============================ */
+/* =============================================== */
+
+
+.video-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 57%;
+    background-color: #ececed;
+    margin-left: 70px;
+}
+
+.video {
+    width: 100%;
+    max-width: 800px; /* Optional max width */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.video-frame {
+    width: 740px;   /* or any % or px value you want */
+    height: 360px;  /* manually set height */
+    border: none;
+    padding: 50px 0px;
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden;
+}
+  
+
+
+
+
+
+
+
+/* ============== Footer ==================== */
+/* ========================================== */
+
+section {
+    width: 100%;
+    height: 50%;
+    margin-top: 40px;
+    background-color: #ececed;
+}
+
+section .content {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    /* border: 1px solid black; */
+}
+
+footer{
+    width: 100%;
+    height: 50%;
+    margin-top: 3px;
+    background-color: #ececed;
+}
+
+footer .container {
+    width: 85%;
+    /* border: 1px solid black; */
+}
+
+footer .container .row .col {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+footer .container .row .col h6{
+    margin-bottom: 15px;
+}
+
+footer .container .row .col .footer-list {
+    list-style-type: none;
+    text-align: left;
+    padding-left: 0; 
+}
+
+footer .container .row .col .footer-list li{
+    margin-bottom: 6px; 
+}
+
+footer .container .row .col li a{
+    display: block;
+    text-decoration: none;
+    color: #666;
+    text-align: left;
+}

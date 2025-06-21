@@ -1,0 +1,137 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Header & Navigation */
+  header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .nav img {
+    height: 40px;
+  }
+  
+  .nav-items {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-items li span {
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .nav-items li span:hover {
+    color: #e60000;
+  }
+  
+  /* Login Section */
+  .login {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  
+  .search i {
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  /* Login Button and Content */
+  .login-wrapper {
+    position: relative;
+  }
+  
+  .login-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .login-btn i {
+    font-size: 20px;
+    color: #555;
+  }
+  
+  .login-btn p {
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Dropdown Content */
+  .login-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    z-index: 100;
+  }
+  
+  .login-wrapper:hover .login-content {
+    display: block;
+  }
+  
+  .login-content p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #444;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+  
+    .nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .nav-items {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .login {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  
