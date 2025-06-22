@@ -14,7 +14,7 @@
         <div class="nav">
             <img src="kotak-logo.webp" alt="">
             <ul class="nav-items">
-                <li class="active"><span><strong>Personal</strong></span></li>
+                <li class="active"><span><strong><a href="#">Personal</a></strong></span></li>
                 <li><span><strong><a href="business.html">Business</a></strong></span></li>
                 <li><span><strong><a href="corporate.html">Corporate</a></strong></span></li>
                 <li><span><strong><a href="private-banking.html">Private Banking</a></strong></span></li>
@@ -37,12 +37,9 @@
 
                 <div class="login-content">
                     <p>Experience the <strong>all-new Kotak Netbanking</strong></p>
-    
                     <p>Simpler, smarter & more intuitive than ever before</p>
-
                     <input type="button" value="Log in to Netbanking" class="btn">
-
-
+                    <hr> other logins <hr>
                 </div>
             </div>
         </div>
@@ -51,7 +48,7 @@
     <nav class="secondary-nav">
         <ul class="secondary-nav-items">
 
-            <li class="nav-item-dropdown">
+            <li class="nav-item-dropdown active">
                 <a href="#">Accounts & Deposits</a>
                 <div class="dropdown">
                     <div class="dropdown-section">
@@ -80,7 +77,7 @@
                 </div>
             </li>
 
-            <li class="nav-item-dropdown">
+            <li class="nav-item-dropdown active">
                 <a href="#">Cards & Prepaid Services</a>
                 <div class="dropdown">
                     <div class="dropdown-section">
@@ -109,7 +106,7 @@
                 </div>
             </li>
 
-            <li class="nav-item-dropdown">
+            <li class="nav-item-dropdown active">
                 <a href="#">Loans</a>
                 <div class="dropdown">
                     <div class="dropdown-section">
@@ -137,7 +134,8 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item-dropdown">
+
+            <li class="nav-item-dropdown active">
                 <a href="#">Investment & Insurance</a>
                 <div class="dropdown">
                     <div class="dropdown-section">
@@ -166,7 +164,7 @@
                 </div>
             </li>
 
-            <li class="nav-item-dropdown">
+            <li class="nav-item-dropdown active">
                 <a href="#">Payments & Taxes</a>
                 <div class="dropdown">
                     <div class="dropdown-section">
@@ -195,7 +193,7 @@
                 </div>
             </li>
 
-            <li class="nav-item-dropdown">
+            <li class="nav-item-dropdown active">
                 <a href="#">Offers</a>
                 <div class="dropdown">
                     <div class="dropdown-section">
@@ -224,7 +222,7 @@
                 </div>
             </li>
 
-            <li class="nav-item-dropdown">
+            <li class="nav-item-dropdown active">
                 <a href="#">Service Request</a>
                 <div class="dropdown">
                     <div class="dropdown-section">
@@ -257,22 +255,34 @@
         <div class="secondary-actions">
           <div class="nav-btn">
             <i class="bi bi-question-circle"></i>
-            <p><strong>Help Center</strong></p>
+            <p><strong><a href="">Help Center</a></strong></p>
           </div>
           <div class="nav-btn">
             <i class="bi bi-geo-alt"></i>
-            <p><strong>Locate Us</strong></p>
+            <p><strong><a href="https://g.co/kgs/M3gQpju">Locate Us</a></strong></p>
           </div>
         </div>
     </nav>
     <div class="banner-scroll">
         <div class="banner-img">
-            <img src="kotak-brand-girl-cc-banner-1440-x-548.jpg" alt="">
-            <img src="811-makhhan-camps-d.jpg" alt="">
-            <!-- Optional: Repeat for smooth looping -->
-            <img src="kotak-brand-girl-cc-banner-1440-x-548.jpg" alt="">
-            <img src="811-makhhan-camps-d.jpg" alt="">
-        </div>
+            <div class="image-wrapper">
+              <img src="kotak-brand-girl-cc-banner-1440-x-548.jpg" alt="">
+              <div class="banner-text">
+                <p class="p1">Enjoy Exclusive Offer with Kotak Credit Cards</p>
+                <p class="p2">Seamless Onboarding | Instant 24x7 VKYC</p>
+                <button class="btn btn-success">Get Your Card Now</button>
+              </div>
+            </div>
+          
+            <div class="image-wrapper">
+                <img src="811-makhhan-camps-d.jpg" alt="">
+                <div class="btn2">
+                    <button class="btn btn-success">Open Kotak811 A/c</button>
+                </div>
+            </div>
+            
+          </div>
+          
     </div>
     <div class="container mt-5">
         <div class="row g-4">
@@ -395,7 +405,7 @@
 
     <div class="box ">
         <div class="video-box">
-            <div class="video text-centre">
+            <div class="video">
                 <iframe
                 src="https://www.youtube.com/embed/t7ZU1dCVpWU?si=X17_dGEV83lrtecn" 
                 title="YouTube video player" 
@@ -403,17 +413,21 @@
             </div>
         </div>
 
-
-
-
         <div class="description">
             <div class="content">
-               
+               <h3>Hausla hai toh ho jayega</h3>
+               <img src="image (1).jpg" alt="">
+               <p>
+                    At Kotak, we believe in the fearless 
+                    trailblazers—the ones who dare to dream bigger, 
+                    push boundaries, and turn challenges into 
+                    opportunities. That’s why we are here—to back you 
+                    with financial solutions that evolve with your 
+                    needs, empowering you to chase the extraordinary. 
+                    Because when you have Hausla, anything is possible.
+                </p>
             </div>
         </div>
-
-
-        
     </div>
 
 
@@ -428,18 +442,18 @@
 
     <section>
         <div class="content">
-            <h6><strong>Channel Red *New*</strong></h6>
-            <p>Mobile Banking | Net Banking | Manage your account | Transfer money | Recharge / Make payments | Credit Cards | Debit Cards | Loans | National Pension Scheme | Deposits</p>
+            <p class="content_title">Channel Red *New*</p>
+            <p class="content_links">Mobile Banking | Net Banking | Manage your account | Transfer money | Recharge / Make payments | Credit Cards | Debit Cards | Loans | National Pension Scheme | Deposits</p>
 
             <hr>
 
-            <h6><strong>Popular Products</strong></h6>
-            <p>Mobile Banking | Net Banking | Manage your account | Transfer money | Recharge / Make payments | Credit Cards | Debit Cards | Loans | National Pension Scheme | Deposits</p>
+            <p class="content_title">Popular Products</p>
+            <p class="content_links">Mobile Banking | Net Banking | Manage your account | Transfer money | Recharge / Make payments | Credit Cards | Debit Cards | Loans | National Pension Scheme | Deposits</p>
 
             <hr>
 
-            <h6><strong>Help Center</strong></h6>
-            <p>Mobile Banking | Net Banking | Manage your account | Transfer money | Recharge / Make payments | Credit Cards | Debit Cards | Loans | National Pension Scheme | Deposits</p>
+            <p class="content_title">Help Center</p>
+            <p class="content_links">Mobile Banking | Net Banking | Manage your account | Transfer money | Recharge / Make payments | Credit Cards | Debit Cards | Loans | National Pension Scheme | Deposits</p>
         </div>
     </section>
 
@@ -447,7 +461,7 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col">
-                    <h6><strong>About us</strong></h6>
+                    <p class="link_head"><a href="">About us</a></p>
                     <ul class="footer-list">
                         <li><a href="">Our Businesses</a></li>
                         <li><a href="">Media Centre</a></li>
@@ -457,51 +471,7 @@
                         <li><a href="">KMFSL</a></li>
                     </ul>
 
-                    <h6><strong>About us</strong></h6>
-                    <ul class="footer-list">
-                        <li><a href="">Our Businesses</a></li>
-                        <li><a href="">Media Centre</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">DIFC Branch</a></li>
-                        <li><a href="">GIFT Branch</a></li>
-                        <li><a href="">KMFSL</a></li>
-                    </ul>
-                </div>
-
-                <div class="col">
-                    <h6><strong>About us</strong></h6>
-                    <ul class="footer-list">
-                        <li><a href="">Our Businesses</a></li>
-                        <li><a href="">Media Centre</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">DIFC Branch</a></li>
-                        <li><a href="">GIFT Branch</a></li>
-                        <li><a href="">KMFSL</a></li>
-                        <li><a href="">Our Businesses</a></li>
-                        <li><a href="">Media Centre</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">DIFC Branch</a></li>
-                        <li><a href="">GIFT Branch</a></li>
-                        <li><a href="">KMFSL</a></li>
-                    </ul>
-                </div>
-
-                <div class="col">
-                    <h6><strong>About us</strong></h6>
-                    <ul class="footer-list">
-                        <li><a href="">Our Businesses</a></li>
-                        <li><a href="">Media Centre</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">DIFC Branch</a></li>
-                        <li><a href="">GIFT Branch</a></li>
-                        <li><a href="">KMFSL</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">DIFC Branch</a></li>
-                        <li><a href="">GIFT Branch</a></li>
-                        <li><a href="">KMFSL</a></li>
-                    </ul>
-
-                    <h6><strong>About us</strong></h6>
+                    <p class="link_head"><a href="">About us</a></p>
                     <ul class="footer-list">
                         <li><a href="">Our Businesses</a></li>
                         <li><a href="">Media Centre</a></li>
@@ -513,7 +483,39 @@
                 </div>
 
                 <div class="col">
-                    <h6><strong>About us</strong></h6>
+                    <p class="link_head"><a href="">About us</a></p>
+                    <ul class="footer-list">
+                        <li><a href="">Our Businesses</a></li>
+                        <li><a href="">Media Centre</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">DIFC Branch</a></li>
+                        <li><a href="">GIFT Branch</a></li>
+                        <li><a href="">KMFSL</a></li>
+                        <li><a href="">Our Businesses</a></li>
+                        <li><a href="">Media Centre</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">DIFC Branch</a></li>
+                        <li><a href="">GIFT Branch</a></li>
+                        <li><a href="">KMFSL</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <p class="link_head"><a href="">About us</a></p>
+                    <ul class="footer-list">
+                        <li><a href="">Our Businesses</a></li>
+                        <li><a href="">Media Centre</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">DIFC Branch</a></li>
+                        <li><a href="">GIFT Branch</a></li>
+                        <li><a href="">KMFSL</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">DIFC Branch</a></li>
+                        <li><a href="">GIFT Branch</a></li>
+                        <li><a href="">KMFSL</a></li>
+                    </ul>
+
+                    <p class="link_head"><a href="">About us</a></p>
                     <ul class="footer-list">
                         <li><a href="">Our Businesses</a></li>
                         <li><a href="">Media Centre</a></li>
@@ -525,7 +527,7 @@
                 </div>
 
                 <div class="col">
-                    <h6><strong>About us</strong></h6>
+                    <p class="link_head"><a href="">About us</a></p>
                     <ul class="footer-list">
                         <li><a href="">Our Businesses</a></li>
                         <li><a href="">Media Centre</a></li>
@@ -537,7 +539,19 @@
                 </div>
 
                 <div class="col">
-                    <h6><strong>About us</strong></h6>
+                    <p class="link_head"><a href="">About us</a></p>
+                    <ul class="footer-list">
+                        <li><a href="">Our Businesses</a></li>
+                        <li><a href="">Media Centre</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">DIFC Branch</a></li>
+                        <li><a href="">GIFT Branch</a></li>
+                        <li><a href="">KMFSL</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <p class="link_head"><a href="">About us</a></p>
                     <ul class="footer-list">
                         <li><a href="">Our Businesses</a></li>
                         <li><a href="">Media Centre</a></li>
@@ -549,6 +563,49 @@
                 </div>
 
             </div>
+
+
+        </div>
+
+        <div class="installation">
+            <div class="connect">
+                <p>Connect with Us</p>
+                <div class="icon_space">
+                    <span class="icon"><a href="https://www.facebook.com/KotakBank/"><i class="bi fb bi-facebook"></i></a></span>
+                    <span class="icon"><a href="https://x.com/kotakbankltd?lang=en"><i class="bi twitter bi-twitter"></i></a></span>
+                    <span class="icon"><a href="https://www.youtube.com/user/KotakBankIndia"><i class="bi youtube bi-youtube"></i></a></span>
+                    <span class="icon"><a href="https://www.linkedin.com/company/kotak-mahindra-bank/"><i class="bi linkedin bi-linkedin"></i></a></span>
+                </div>
+            </div>
+
+            <div class="install">
+                <p>Install the Kotak Bank App</p>
+                <a href="https://play.google.com/store/apps/details?id=com.kotak.bank.mobile&hl=en_IN&pli=1"><img src="google-play.webp" alt="Play Store"></a>
+                <a href="https://apps.apple.com/in/app/kotak-bank-811-mobile-app/id6447808696?mt=8"><img src="apple-store.webp" alt="App Store"></a>
+
+                <span class="image">
+                    <img src="entrust.webp" alt="Entrust">
+                    <img src="verisign.webp" alt="Verisign">
+                </span>
+            </div>
+
+
+            <div class="f_dropdown">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Kotak Group Companies</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+            </div>
+        </div>
+
+        <div class="terms">
+            <span>Copyright Kotak Mahindra Bank Limited.</span>
+            <span>|</span>
+            <span><a href="">Disclaimer</a>|</span>
+            <span><a href="">Privacy Policy</a>|</span>
+            <span><a href="">Terms and Conditions</a></span>
         </div>
     </footer>
         
