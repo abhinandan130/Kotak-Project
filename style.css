@@ -117,14 +117,15 @@ header .login .login-btn p {
     font-weight: 600;
 }
 
-header .login .login-content {
+header .login .login-content{
     transition: all 0.3s ease;
     display: none;
     position: absolute;
-    top: 100%;
+    top: 110%;
     left: 10px;
-    background-color: #ffffff;
     padding: 10px;
+    padding-top: 20px;
+    background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 250px;
@@ -132,6 +133,19 @@ header .login .login-content {
     transform: translate(-50%, 0);
     z-index: 10;
 }
+
+
+.login-content::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* push it above the box */
+    right: 60px; /* adjust based on where your button is */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid white; /* same color as .login-content */
+  }
 
 header .login .login-content .btn {
     width: 100%;
@@ -143,6 +157,44 @@ header .login .login-content .btn {
 header .login .login-wrapper:hover .login-content {
     display: block;
 }
+  
+
+header .login .login-content .hr-style {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0px;
+    /* border: 1px solid black; */
+
+}
+
+header .login .login-content .hr-style .hr1 {
+    width: 30%;
+    padding: 0px 10px
+
+}
+
+header .login .login-content .login-links .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    /* border: 1px solid black; */
+}
+
+header .login .login-content .login-links .links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header .login .login-content .login-links .links a .bi {
+    color: orangered;
+}
+
+
+
 
 /* ============== Nav bar =================== */
 /* ========================================== */
@@ -152,7 +204,7 @@ header .login .login-wrapper:hover .login-content {
     align-items: center;
     align-content: center;
     height: 50px;
-    padding: 10px 40px;
+    padding: 0px 40px;
     background-color: white;
     flex-wrap: wrap;
 }
@@ -162,75 +214,70 @@ header .login .login-wrapper:hover .login-content {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* gap: 1px; */
+    height: 100%;
+    gap: 1rem;
     padding: 0;
     margin: 0;
-    /* font-weight: 600; */
     font-family: 'Roboto', Arial, sans-serif;
 }
 
 .secondary-nav-items > li {
     position: relative;
+    height: 100%;
+}
+
+.secondary-nav-items li .nav-list-items {
+    padding: 15px 5px;
 }
 
 .secondary-nav-items li a {
     text-decoration: none;
     color: #555;
     font-size: 0.95rem;
-    /* padding: 8px 12px; */
+    align-items: center;
     border-radius: 6px;
     transition: all 0.25s ease;
     display: inline-block;
     opacity: .7;
 }
 
-.secondary-nav-items li a:hover,
-.secondary-nav-items li a:focus {
-    color: #222;
-    /* font-weight: bold; */
-    /* outline: none; */
-}
 
-
-
-/* Style for the active list item */
 .secondary-nav li.active {
-    position: relative; /* Allows positioning of the white line */
+    position: relative;
 }
 
 .secondary-nav li.active:hover::after {
-    content: ""; /* Creates the white line */
+    content: "";
     position: absolute;
-    bottom: -16px; /* Position the line above the list item */
+    bottom: -2px;
     left: 0;
-    width: 90%; /* Full width of the list item */
-    height: 5px; /* Thickness of the line */
-    background-color: rgb(222, 7, 7); /* White color for the line */
+    width: 100%;
+    height: 6px;
+    background-color: rgb(222, 7, 7);
     border-radius: 200px;
 }
-
 
 
 
 /* ========= DROPDOWN MULTI-COLUMN STYLE ========= */
 .nav-item-dropdown .dropdown {
     position: fixed;
-    top: 26.3%; 
-    left: 47.6%;
+    top: 47.1%; 
+    left: 50.1%;
     transform: translate(-50%, -50%); 
     display: flex;
     flex-wrap: wrap;
-    min-width: 80%;
+    min-width: 85%;
+    min-height: 65.2%;
     background-color: #fff;
-    border: 1px solid #ddd;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 5px;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 1000;
+    z-index: 100;
+    /* border: 1px solid black; */
 }
 
 .nav-item-dropdown:hover .dropdown,
@@ -240,7 +287,7 @@ header .login .login-wrapper:hover .login-content {
 }
 
 .dropdown-section {
-    flex: 1 1 25%;
+    /* flex: 1 1 25%; */
     padding: 0 16px;
     box-sizing: border-box;
     min-width: 200px;
@@ -251,6 +298,29 @@ header .login .login-wrapper:hover .login-content {
     font-weight: 700;
     color: #004aad;
     margin-bottom: 8px;
+}
+
+.secondary-nav .secondary-nav-items .nav-item-dropdown .dropdown .dropdown-section h6 a{
+    text-decoration: none;
+    color: rgb(1, 70, 161);
+}
+
+  
+
+.dropdown-section h6 .premium-style {
+    background: linear-gradient(119deg, #ffe666 0, #fc8719 100%); 
+    font-size: 10px; 
+    padding: 2px; 
+    border-radius: 2px; 
+    color: black;
+}
+
+.dropdown-section h6 .new-style {
+    background: linear-gradient(119deg, #f79498 0, #f73636 100%);
+    font-size: 10px; 
+    padding: 2px; 
+    border-radius: 2px; 
+    color: black;
 }
 
 .dropdown-section ul {
@@ -265,23 +335,22 @@ header .login .login-wrapper:hover .login-content {
 
 .dropdown-section ul li a {
     display: block;
-    padding: 6px 8px;
-    color: #555;
+    /* color: #555; */
     font-size: 0.9rem;
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.dropdown-section ul li a:hover {
-    background-color: #f5f5f5;
-    color: #222;
-    font-weight: 600;
+.dropdown-section .dropdown-section-hr {
+    width: 90%;
 }
 
-.dropdown-section:not(:last-child) {
-    border-right: 1px solid #eee;
+.dropdown-section .premium-class a {
+    text-decoration: none;
+    color: unset;
 }
+
 /* ------------------------------------------- */
 .secondary-actions {
     display: flex;
