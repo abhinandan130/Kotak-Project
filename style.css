@@ -4,6 +4,8 @@
 }
 body {
     background-color: #ececed;
+    overflow-x: hidden;
+
 }
 
 
@@ -207,6 +209,7 @@ header .login .login-content .login-links .links a .bi {
     padding: 0px 40px;
     background-color: white;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .secondary-nav-items {
@@ -262,14 +265,13 @@ header .login .login-content .login-links .links a .bi {
 /* ========= DROPDOWN MULTI-COLUMN STYLE ========= */
 .nav-item-dropdown .dropdown {
     position: fixed;
-    top: 47.1%; 
-    left: 50.1%;
-    transform: translate(-50%, -50%); 
+    top: 113px; 
+    left: 7.6%;
     display: flex;
     flex-wrap: wrap;
-    min-width: 85%;
+    width: 85%;
     min-height: 65.2%;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 5px;
@@ -277,17 +279,19 @@ header .login .login-content .login-links .links a .bi {
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 100;
-    /* border: 1px solid black; */
 }
+
+  
 
 .nav-item-dropdown:hover .dropdown,
 .nav-item-dropdown:focus-within .dropdown {
+    display: flex;
     visibility: visible;
     opacity: 1;
 }
 
 .dropdown-section {
-    /* flex: 1 1 25%; */
+    flex: 1 1 25%;
     padding: 0 16px;
     box-sizing: border-box;
     min-width: 200px;
