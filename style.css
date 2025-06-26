@@ -133,7 +133,7 @@ header .login .login-content{
     width: 250px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transform: translate(-50%, 0);
-    z-index: 10;
+    z-index: 9999;
 }
 
 
@@ -210,6 +210,7 @@ header .login .login-content .login-links .links a .bi {
     background-color: white;
     flex-wrap: wrap;
     position: relative;
+    z-index: 1000;
 }
 
 .secondary-nav-items {
@@ -222,10 +223,11 @@ header .login .login-content .login-links .links a .bi {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', Arial, sans-serif;
+
+
 }
 
 .secondary-nav-items > li {
-    position: relative;
     height: 100%;
 }
 
@@ -245,7 +247,7 @@ header .login .login-content .login-links .links a .bi {
 }
 
 
-.secondary-nav li.active {
+/* .secondary-nav li.nav-item-dropdown {
     position: relative;
 }
 
@@ -258,19 +260,19 @@ header .login .login-content .login-links .links a .bi {
     height: 6px;
     background-color: rgb(222, 7, 7);
     border-radius: 200px;
-}
+} */
 
 
 
 /* ========= DROPDOWN MULTI-COLUMN STYLE ========= */
 .nav-item-dropdown .dropdown {
-    position: fixed;
-    top: 113px; 
-    left: 7.6%;
+    position: absolute;
+    top: 48px; 
+    left: 8%;
     display: flex;
     flex-wrap: wrap;
-    width: 85%;
-    min-height: 65.2%;
+    min-width: 85%;
+    min-height: 500px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -367,7 +369,7 @@ header .login .login-content .login-links .links a .bi {
 }
 
 .secondary-actions .button .btn1 {
-    width: 130px;
+    width: 140px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -402,10 +404,12 @@ header .login .login-content .login-links .links a .bi {
     font-size: large;
 }
 
+.secondary-actions .button .btn1 .icon,
 .secondary-actions .button .btn2 .icon {
     margin-left: 5px;
 }
 
+.secondary-actions .button .btn1 a,
 .secondary-actions .button .btn2 a {
     text-decoration: none;
     font-size: small;
@@ -521,17 +525,12 @@ header .login .login-content .login-links .links a .bi {
 
 .card-title {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .card-text {
     font-size: 0.95rem;
     color: #555;
-}
-
-.btn-primary {
-    border-radius: 30px;
-    padding: 6px 20px;
 }
 
 .container {
@@ -542,38 +541,6 @@ header .login .login-content .login-links .links a .bi {
     align-items: center;
 }
 
-.apply-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 10px;
-    color: orangered;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.apply-link:hover {
-    color: #000;
-}
-
-.apply-link i {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    color: orangered;
-    border: 1px solid orangered;
-    font-size: 10px;
-    transition: orangered 0.3s ease;
-}
-
-.apply-link:hover i {
-    color: #000;
-    border: 1px solid #000;
-}
 
 
 /* ============== box ============================ */
@@ -768,6 +735,161 @@ header .login .login-content .login-links .links a .bi {
     width: 95%;
 }
 
+/* ============== Need Help ==================== */
+/* ============================================= */
+.scroll-container-wrapper {
+    background: #eee;
+    padding: 0px 0;
+    overflow: hidden;
+}
+
+.scroll-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 20px;
+    /* border: 1px solid #000; */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.text-box {
+    flex: 0 0 auto;
+    width: 230px;
+    height: 70px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 10px 20px;
+}
+
+.content-box a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: #333;
+    text-decoration: none;
+}
+
+.text-icon i {
+    font-size: 20px;
+    color: #344054;
+}
+
+.text-content p{
+    padding: 0px;
+    margin: 0px;
+}
+
+.text-content .p1 {
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0;
+    color: #111;
+}
+
+.text-content .p2 {
+    font-size: 12px;
+    color: #777;
+}
+
+.scroll-indicator {
+text-align: center;
+}
+
+.scroll-indicator .dot {
+    height: 6px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-indicator .dot.active {
+    background-color: #007bff;
+}
+
+
+
+/* ============== Cards 2 ==================== */
+/* ========================================== */
+.container .row {
+    max-width: 1140px;
+}
+
+.container .row .col .card .card-body {
+    margin: 0px 20px;
+}
+
+.container .row .col .card .card-body .card-title {
+    margin-bottom: 50px;
+}
+
+.container .row .col .card .card-body .card-text {
+    margin-bottom: 80px;
+}
+
+.container .row .col .card .card-body a {
+    text-decoration: none;
+    color: orangered;
+    padding: 0;
+}
+
+.container .row .col .card .card-body a span {
+    margin-left: 5px;
+    border-radius: 100%;
+    padding: 0px 2px;
+    border: 1px solid orangered;
+}
+
+.container .row .col .card .card-body a span .bi {
+    font-size: 10px;
+}
+
+
+
+/* ============== Back to top ==================== */
+/* =============================================== */
+.back-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 80px;
+    background-color: #ececed;
+
+}
+
+.back-top .back a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: .5rem;
+    color: black;
+    padding: 0px;
+    margin-right: 160px;
+
+}
+
+.back-top .back a span {
+    font-size: 1.5rem;
+}
+
+.back-top .back a .bi {
+    font-size: 10px;
+    height: max-content;
+    padding: 0px 4px;
+    border-radius: 50%;
+    text-align: center;
+    border: 1px solid black;
+}
+
 
 
 /* ============== Footer ==================== */
@@ -918,7 +1040,6 @@ footer .container .row .col .link_head a {
 
 .installation .f_dropdown {
     margin-right: 0px;
-    border: 1px solid black;
 }
 
 .f_dropdown {
