@@ -4,6 +4,8 @@
 }
 body {
     background-color: #ececed;
+    padding: 0px;
+    margin: 0px;
 }
 
 
@@ -117,21 +119,35 @@ header .login .login-btn p {
     font-weight: 600;
 }
 
-header .login .login-content {
+header .login .login-content{
     transition: all 0.3s ease;
     display: none;
     position: absolute;
-    top: 100%;
+    top: 110%;
     left: 10px;
-    background-color: #ffffff;
     padding: 10px;
+    padding-top: 20px;
+    background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 250px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transform: translate(-50%, 0);
-    z-index: 10;
+    z-index: 9999;
 }
+
+
+.login-content::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* push it above the box */
+    right: 60px; /* adjust based on where your button is */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid white; /* same color as .login-content */
+  }
 
 header .login .login-content .btn {
     width: 100%;
@@ -143,6 +159,41 @@ header .login .login-content .btn {
 header .login .login-wrapper:hover .login-content {
     display: block;
 }
+  
+
+header .login .login-content .hr-style {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0px;
+    /* border: 1px solid black; */
+
+}
+
+header .login .login-content .hr-style .hr1 {
+    width: 30%;
+    padding: 0px 10px
+
+}
+
+header .login .login-content .login-links .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    /* border: 1px solid black; */
+}
+
+header .login .login-content .login-links .links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header .login .login-content .login-links .links a .bi {
+    color: orangered;
+}
 
 /* ============== Nav bar =================== */
 /* ========================================== */
@@ -151,10 +202,13 @@ header .login .login-wrapper:hover .login-content {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    column-gap: 220px;
     height: 50px;
+    padding: 0px 40px;
+    column-gap: 260px;
     background-color: white;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1000;
 }
 
 .secondary-nav-items {
@@ -162,79 +216,78 @@ header .login .login-wrapper:hover .login-content {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* gap: 1px; */
+    height: 100%;
+    gap: 1rem;
     padding: 0;
     margin: 0;
-    /* font-weight: 600; */
     font-family: 'Roboto', Arial, sans-serif;
+
+
 }
 
 .secondary-nav-items > li {
-    position: relative;
+    height: 100%;
+}
+
+.secondary-nav-items li .nav-list-items {
+    padding: 15px 5px;
 }
 
 .secondary-nav-items li a {
     text-decoration: none;
     color: #555;
     font-size: 0.95rem;
-    /* padding: 8px 12px; */
+    align-items: center;
     border-radius: 6px;
     transition: all 0.25s ease;
     display: inline-block;
     opacity: .7;
 }
 
-.secondary-nav-items li a:hover,
-.secondary-nav-items li a:focus {
-    color: #222;
-    /* font-weight: bold; */
-    /* outline: none; */
-}
 
 
-
-/* Style for the active list item */
-.secondary-nav li.active {
-    position: relative; /* Allows positioning of the white line */
+/* .secondary-nav li.nav-item-dropdown {
+    position: relative;
 }
 
 .secondary-nav li.active:hover::after {
-    content: ""; /* Creates the white line */
+    content: "";
     position: absolute;
-    bottom: -16px; /* Position the line above the list item */
+    bottom: -2px;
     left: 0;
-    width: 90%; /* Full width of the list item */
-    height: 5px; /* Thickness of the line */
-    background-color: rgb(222, 7, 7); /* White color for the line */
-    border-radius: 350px;
-}
+    width: 100%;
+    height: 6px;
+    background-color: rgb(222, 7, 7);
+    border-radius: 200px;
+} */
 
 
 
 
 /* ========= DROPDOWN MULTI-COLUMN STYLE ========= */
 .nav-item-dropdown .dropdown {
-    position: fixed;
-    top: 26.9%; 
-    left: 47.6%;
-    transform: translate(-50%, -50%); 
+    position: absolute;
+    top: 48px; 
+    left: 8%;
     display: flex;
     flex-wrap: wrap;
-    min-width: 80%;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    min-width: 1200px;
+    min-height: 500px;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 5px;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 1000;
+    z-index: 100;
 }
+
+  
 
 .nav-item-dropdown:hover .dropdown,
 .nav-item-dropdown:focus-within .dropdown {
+    display: flex;
     visibility: visible;
     opacity: 1;
 }
@@ -253,6 +306,29 @@ header .login .login-wrapper:hover .login-content {
     margin-bottom: 8px;
 }
 
+.secondary-nav .secondary-nav-items .nav-item-dropdown .dropdown .dropdown-section h6 a{
+    text-decoration: none;
+    color: rgb(1, 70, 161);
+}
+
+  
+
+.dropdown-section h6 .premium-style {
+    background: linear-gradient(119deg, #ffe666 0, #fc8719 100%); 
+    font-size: 10px; 
+    padding: 2px; 
+    border-radius: 2px; 
+    color: black;
+}
+
+.dropdown-section h6 .new-style {
+    background: linear-gradient(119deg, #f79498 0, #f73636 100%);
+    font-size: 10px; 
+    padding: 2px; 
+    border-radius: 2px; 
+    color: black;
+}
+
 .dropdown-section ul {
     padding: 0;
     margin: 0;
@@ -265,22 +341,20 @@ header .login .login-wrapper:hover .login-content {
 
 .dropdown-section ul li a {
     display: block;
-    padding: 6px 8px;
-    color: #555;
+    /* color: #555; */
     font-size: 0.9rem;
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.dropdown-section ul li a:hover {
-    background-color: #f5f5f5;
-    color: #222;
-    font-weight: 600;
+.dropdown-section .dropdown-section-hr {
+    width: 90%;
 }
 
-.dropdown-section:not(:last-child) {
-    border-right: 1px solid #eee;
+.dropdown-section .premium-class a {
+    text-decoration: none;
+    color: unset;
 }
 /* ------------------------------------------- */
 .secondary-actions {
@@ -294,7 +368,7 @@ header .login .login-wrapper:hover .login-content {
 }
 
 .secondary-actions .button .btn1 {
-    width: 130px;
+    width: 140px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -329,10 +403,12 @@ header .login .login-wrapper:hover .login-content {
     font-size: large;
 }
 
+.secondary-actions .button .btn1 .icon,
 .secondary-actions .button .btn2 .icon {
     margin-left: 5px;
 }
 
+.secondary-actions .button .btn1 a,
 .secondary-actions .button .btn2 a {
     text-decoration: none;
     font-size: small;
@@ -342,16 +418,610 @@ header .login .login-wrapper:hover .login-content {
 
 /* ============== Banner ======================================= */
 /* ============================================================= */
+.banner-img {
+    position: relative;
+}
+
+.banner-img img {
+    width: 100%;
+}
+
+.banner-img .banner-text {
+    position: absolute;
+    top: 28%;
+    left: 8%;
+}
+
+.banner-img .banner-text h1 {
+    font-size: 35pt;
+    font-weight: bolder;
+}
+
+.banner-img .banner-text .btn{
+    width: 150px;
+    height: 50px;
+    align-content: center;
+    background-color: orangered;
+    font-size: 13pt;
+    padding: 5px;
+    margin-top: 50px;
+    border: none;
+}
+
+/* ============== white box ==================== */
+/* ============================================= */
+.white-box {
+    display: block;
+    text-align: center;
+    padding-top: 50px;
+    /* border: 1px solid black; */
+}
+.white-box .white-box-p1{
+    color: #036;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.white-box .blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+}
+
+.white-box .blocks .block-content {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-height: 350px;
+    padding: 40px;
+    text-align: start;
+    background-color: #ececed;
+    border-right: 1px solid #e2e2e2;
+}
+
+.white-box .blocks .block-content img {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 20px;
+}
+
+.white-box .blocks .block-content h5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #036;
+    margin: 10px 0 5px;
+}
+
+.white-box .blocks .block-content .block-content-p1 {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.white-box .blocks .block-content .block-content-p2 {
+    font-size: 13px;
+    color: #666;
+}
+
+.white-box .blocks .block-content a {
+    display: flex;
+    justify-content: center;
+    gap: .1rem;
+    margin-top: auto;
+    align-self: flex-start; 
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: orangered;
+}
+
+.white-box .blocks .block-content a .bi {
+    font-weight: 100;
+    font-size: 10px;
+    padding: 1px;
+    border-radius: 50%;
+    border: 1px solid orangered;
+}
+
+/* ------------------------------------------ */
+.white-box .slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    min-width: 100%;
+    /* border: 1px solid black; */
+}
+
+.white-box .slider .slider-heading {
+    width: 80%;
+    text-align: start;
+    align-items: center;
+    /* border: 1px solid black;    */
+}
+
+.white-box .slider .slider-heading .slider-heading-text {
+    margin: 0px;
+    padding: 0px;
+}
+
+.white-box .slider .slider-heading p {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.white-box .slider  .slider-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10px;
+    width: 80%;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* border: 1px solid black; */
+}
+
+.white-box .slider  .slider-content span .bi {
+    color: orangered;
+}
+
+.white-box .slider  .slider-content a {
+    padding: 15px;
+}
+
+.white-box .slider  .slider-content .btn {
+    border-radius: 50px;
+    width: 140px;
+    height: 45px;
+    color: black;
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+/* ============== Grey box ==================== */
+/* ============================================ */
+
+
+.grey-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 20px;
+    height: 400px;
+    background-color: #ececed;
+}
+
+.grey-box .box1 {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 330px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+}
+
+.grey-box .box1 .box1-p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.grey-box .box1 .frame {
+    border-radius: 5px;
+}
+
+.grey-box .box1 .explore-link {
+    text-decoration: none;
+    color: orangered;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.grey-box .box1 a .bi {
+    border-radius: 50%;
+    font-size: 10px;
+    border: 1px solid orangered;
+}
+
+.grey-box .box1 .box-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    /* border: 1px solid black; */
+}
+
+
+.grey-box .box1 .box-items img {
+    width: 24px;
+    height: 24px;
+}
+
+.grey-box .box1 .box-items .box-links {
+    text-decoration: none;
+    color: black;
+    font-size: 10pt;
+    padding: 0px;
+}
+
+.grey-box .box1 .box-items a .bi {
+    margin-left: auto;
+    border: none;
+    color: orangered;
+}
+
+/* ============== accounts ==================== */
+/* ============================================ */
+.accounts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 660px;
+    background-image: url(https://www.kotak.com/etc/designs/kotak/clientlib-site/images/gray-gradient4.jpg);
+}
+.accounts p {
+    font-size: 24px;
+    /* margin-top: 50px; */
+}
+
+.accounts .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.accounts .container .container-box {
+    width: 27.58%;
+    height: 450px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+}
+
+.accounts .container .container-box a img {
+    width: max-content;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.accounts .container .container-box a div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.accounts .container .container-box .container-box-p1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.accounts .container .container-box a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.accounts .container .container-box a div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.accounts .container .container-box a div span {
+    align-self: flex-start;
+    margin-top: auto; 
+    color: orangered;
+    font-weight: bold;
+}
+
+.accounts .container .container-box a .container-box-p2 {
+    font-size: 16px;
+}
+
+.accounts .container .container-box a div span .bi {
+    border-radius: 50%;
+    font-size: 10px;
+    color: orangered;
+    border: 1px solid orangered;
+}
+
+/* ============== solutions ==================== */
+/* ============================================= */
+.solutions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 660px;
+    background-color: #ececed;
+}
+.solutions p {
+    font-size: 24px;
+    /* margin-top: 50px; */
+}
+
+.solutions .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.solutions .container .container-box {
+    width: 27.58%;
+    height: 450px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+}
+
+.solutions .container .container-box a img {
+    width: max-content;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.solutions .container .container-box a div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.solutions .container .container-box .container-box-p1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.solutions .container .container-box a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.solutions .container .container-box a div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.solutions .container .container-box a div span {
+    align-self: flex-start;
+    margin-top: auto; 
+    color: orangered;
+    font-weight: bold;
+}
+
+.solutions .container .container-box a .container-box-p2 {
+    font-size: 16px;
+}
+
+.solutions .container .container-box a div span .bi {
+    border-radius: 50%;
+    font-size: 10px;
+    color: orangered;
+    border: 1px solid orangered;
+}
+
+/* =========== Knowledge Box ================ */
+/* ========================================== */
+
+.text_section {
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+.text_section .text h2 {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: Roboto, sans-serif;
+    color: #0f3464;
+}
+
+.knowledge_data {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 450px;
+    /* margin-top: 20px; */
+    gap: 2rem;
+    background-color: #ececed;
+    /* border: 1px solid black; */
+}
+
+.knowledge_data  .data_parse {
+    width: 50%;
+    height: 410px;
+    border-radius: 10px;
+    position: relative;
+    /* border: 1px solid black; */
+}
+
+.knowledge_data  .data_parse img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.knowledge_data  .data_parse .data-parse-text {
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px 20px 0px;
+    color: #fff;
+    border-radius: 0 0 4px 4px;
+}
+
+.knowledge_data  .data_parse .data-parse-text p{
+    padding: 0px;
+    margin: 0px;
+}
+
+.knowledge_data  .data_parse .data-parse-text a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.knowledge_data  .data_parse .data-parse-text .text-p1 {
+    font-weight: bold;
+}
+
+.knowledge_data  .data_parse .data-parse-text .text-p2 {
+    font-size: 16pt;
+    font-family: sans-serif;
+}
+
+.knowledge_data  .data_parse .data-parse-text .bi {
+    border-radius: 50%;
+    border: 1px solid white;
+    font-size: 10px;
+    padding: 2px;
+}
+
+
+/* -------------------------------- */
+
+.knowledge_data .stories-box {
+    width: 27%;
+    height: 410px;
+    margin-left: 30px;
+    /* margin-bottom: 20px; */
+    padding-left: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+}
+
+.knowledge_data .stories-box .heading {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    color: #101010;
+    margin: 12px 0px;
+}
+
+.knowledge_data .stories-box .story {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.knowledge_data .stories-box .story .story-text {
+    width: 50%;
+    margin-left: 0;
+    margin-right: 50px;
+    /* border: 1px solid black; */
+}
+
+.knowledge_data .stories-box .story .story-text span {
+    font-size: 14px;
+    color: #484646;
+}
+
+.knowledge_data .stories-box .story .story-text span a {
+    text-decoration: none;
+    color: #484646;
+}
+
+.knowledge_data .stories-box .story img {
+    width: 70px;
+    border-radius: 3px;
+}
+
+.knowledge_data .stories-box .story a {
+    text-decoration: none;
+    color: orangered;
+}
+
+.knowledge_data .stories-box .view-all a{
+    text-decoration: none;
+    color: orangered;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.knowledge_data .stories-box .view-all {
+    margin-top: 10px;
+}
+
+.knowledge_data .stories-box .hr-style {
+    width: 95%;
+}
 
 
 
+
+
+
+/* ============== Back to top ==================== */
+/* =============================================== */
+.back-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 80px;
+    background-color: #fff;
+
+}
+
+.back-top .back a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: .5rem;
+    color: black;
+    padding: 0px;
+    margin-right: 160px;
+
+}
+
+.back-top .back a span {
+    font-size: 1.5rem;
+}
+
+.back-top .back a .bi {
+    font-size: 10px;
+    height: max-content;
+    padding: 0px 4px;
+    border-radius: 50%;
+    text-align: center;
+    border: 1px solid black;
+}
 /* ============== Footer ==================== */
 /* ========================================== */
 
 section {
     width: 100%;
     height: 50%;
-    margin-top: 40px;
     background-color: #ececed;
 }
 
@@ -374,6 +1044,8 @@ section .content .content_links{
 
 }
 
+/* ------------------------------------------------- */
+
 footer{
     width: 100%;
     height: 50%;
@@ -389,6 +1061,7 @@ footer .container {
 footer .container .row .col {
     text-align: left;
     margin-bottom: 5px;
+    margin-top: 40px;
 }
 
 footer .container .row .col h6{
@@ -493,7 +1166,6 @@ footer .container .row .col .link_head a {
 
 .installation .f_dropdown {
     margin-right: 0px;
-    border: 1px solid black;
 }
 
 .f_dropdown {

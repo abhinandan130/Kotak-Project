@@ -652,6 +652,7 @@ header .login .login-content .login-links .links a .bi {
 .knowledge_data  .data_parse {
     width: 50%;
     border-radius: 10px;
+    position: relative;
     /* border: 1px solid black; */
 }
 
@@ -660,6 +661,43 @@ header .login .login-content .login-links .links a .bi {
     height: 100%;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+.knowledge_data  .data_parse .data-parse-text {
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px 20px 0px;
+    color: #fff;
+    border-radius: 0 0 4px 4px;
+}
+
+.knowledge_data  .data_parse .data-parse-text p{
+    padding: 0px;
+    margin: 0px;
+}
+
+.knowledge_data  .data_parse .data-parse-text a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.knowledge_data  .data_parse .data-parse-text .text-p1 {
+    font-weight: bold;
+}
+
+.knowledge_data  .data_parse .data-parse-text .text-p2 {
+    font-size: 16pt;
+    font-family: sans-serif;
+}
+
+.knowledge_data  .data_parse .data-parse-text .bi {
+    border-radius: 50%;
+    border: 1px solid white;
+    font-size: 10px;
+    padding: 2px;
 }
 
 
@@ -830,6 +868,7 @@ text-align: center;
 
 .container .row .col .card .card-body .card-title {
     margin-bottom: 50px;
+    color: black;
 }
 
 .container .row .col .card .card-body .card-text {
@@ -851,6 +890,73 @@ text-align: center;
 
 .container .row .col .card .card-body a span .bi {
     font-size: 10px;
+}
+
+/* ---------------------------------------- */
+
+.rates-card {
+    max-width: 400px;
+    max-height: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.rates-header {
+    background-color: #555;
+    color: #fff;
+    padding: 16px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+details {
+    border-bottom: 1px solid #eee;
+}
+
+summary {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* summary::after {
+    content: "\25B6";
+    color: orangered;
+    margin-left: auto;
+    transition: transform 0.4s ease;
+    font-size: 1rem;
+} */
+/* 
+details[open] summary::after {
+    transform: rotate(90deg);
+} */
+
+.details-content {
+    padding: 0 16px 16px 16px;
+    color: #333;
+}
+
+.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+.see-all {
+    display: flex;
+    padding: 16px;
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid black;
 }
 
 
@@ -920,6 +1026,8 @@ section .content .content_links{
     color: #666;
 
 }
+
+/* ------------------------------------------------ */
 
 footer{
     width: 100%;
